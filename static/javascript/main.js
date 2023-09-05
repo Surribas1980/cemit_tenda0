@@ -43,7 +43,7 @@ enviar.addEventListener("click",async (e) => {
        if(result.nombre_cli != undefined){
          
         localStorage.setItem("usuarioLogueado",result.nombre_cli)
-         let foto = `chicaCastana.png`;
+         let foto = `${result.nombre_cli}.png`;
          usuarios.setAttribute("src",foto)
          exit.style.display = 'inline';
        }
