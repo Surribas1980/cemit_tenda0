@@ -33,6 +33,10 @@
           <div class="rexistro">
             <div class="iconos">              
               <img id="usuarios" name="usuario" src="../imagenes/user.png" class="user" alt="user">
+              <div class="cesta">
+                
+                <img id="cesta" name="cesta" src="../imagenes/carrito.png" class="user" alt="user">
+              </div>
               <img id="exit" src="../imagenes/exit.png" name="exit" class="user" alt="user">
             </div>
             <nav id="navegacion_user" name="usuarios">
@@ -104,6 +108,34 @@
     <footer>
       
     </footer>
-    
+    <script>
+     document.addEventListener("DOMContentLoaded",()=>{
+             const isLogueado = () =>{
+              console.log('pasa por isLogueado')
+              let valor = localStorage.getItem("usuarioLogueado")
+              let salidaBooleano = (valor != undefined) ? true : false;
+              console.log(salidaBooleano)
+              return salidaBooleano;
+            }
+           const updateIcons = () =>{
+            console.log('pasa por updateIcons')
+            let isLogued = isLogueado()
+              console.log('isLogued: ',isLogued)
+              if(isLogued === true){
+                updateIconUser()
+              }
+          }
+      
+          const updateIconUser = () => {
+              let nomfoto = localStorage.getItem("usuarioLogueado");
+               let foto = `${nomfoto}.png`;
+               usuarios.setAttribute("src",foto)
+               exit.style.display = 'inline';
+               cesta.style.display = 'inline';
+          }
+       updateIcons()
+     })
+     
+   </script>
   </body>
 </html>

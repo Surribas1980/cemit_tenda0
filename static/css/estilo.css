@@ -34,7 +34,14 @@ span[name="novo_user"]{
 }
 .user[name="exit"]{
   display:none;
-  padding:3px;
+ 
+}
+.user[name="cesta"]{
+  display:none;
+  
+}
+.cesta{
+  position:relative;
 }
 body{
   background-color: #f6f4f3;
@@ -257,6 +264,7 @@ hr{
   .iconos{
     display: flex;
     gap: 1vw;
+    align-items: center;
   }
   nav[name="navegacion"]{
     display:none;

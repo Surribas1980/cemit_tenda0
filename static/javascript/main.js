@@ -12,12 +12,17 @@ cursos.addEventListener('click',()=>{
 
 sobreNos.addEventListener('click',()=>{
   location.replace('/sobrenos')
+  console.log('fasdfasfdadfasdff')
+  setTimeout(() => {
+      console.log("sobreNos Delayed for 2 second.");
+    }, 2000);
 })
 
-home.addEventListener('click',(event)=>{
+home.addEventListener('click', async (event)=>{
   location.replace('/');
-  console.log('event: ',event)
-  //event.target.classList.toggle("colores")
+  await setTimeout(() => {
+      console.log("home Delayed for 2 second.");
+    }, 3000);
 })
 
 
@@ -46,6 +51,7 @@ enviar.addEventListener("click",async (e) => {
          let foto = `${result.nombre_cli}.png`;
          usuarios.setAttribute("src",foto)
          exit.style.display = 'inline';
+         cesta.style.display = 'inline';
        }
      }) 
 
@@ -54,6 +60,7 @@ exit.addEventListener("click",(e)=>{
         let foto = `../imagenes/user.png`;
         usuarios.setAttribute("src",foto)
         exit.style.display = 'none';
+        cesta.style.display = 'none';
       })
 
 rexistrarUsuario.addEventListener("click",async (e)=>{
@@ -68,10 +75,6 @@ rexistrarUsuario.addEventListener("click",async (e)=>{
         console.log('resposta de rexistrarUsuario: ',result)
 })
 
-const isLogueado = () =>{
-  let valor = localStorage.getItem("usuarioLogueado")
-  let salidaBooleano = (valor != undefined) ? true : false;
 
-  return salidaBooleno;
-}
+
 
