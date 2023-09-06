@@ -74,6 +74,17 @@ span[name="novo_user"]{
   display:none;
   
 }
+#numProductos{
+  position:absolute;
+  top:-10px;
+  right: -10px;
+  font-size: 12px;
+  color: white;
+  border:1px solid transparent;
+  border-radius:5px;
+  background-color:red;
+  padding: 4px;
+}
 .cesta{
   position:relative;
 }

@@ -19,6 +19,8 @@ engadir.addEventListener("click",(e)=>{
   pedidoCesta.producto = form.elements.producto.value;
   pedidoCesta.valor = form.elements.valor.value;
   pedidoCesta.cantidade = form.elements.cantidade.value;
+  pedidoCesta.numPedidos = arrayCesta.length;
+  numProductos.textContent = arrayCesta.length;
   arrayCesta.push(pedidoCesta)
   localStorage.setItem("cesta",arrayCesta)
   console.log('valores collidos : ', arrayCesta)
@@ -32,6 +34,8 @@ let pedidoCesta = {};
   pedidoCesta.producto = form.elements.producto.value;
   pedidoCesta.valor = form.elements.valor.value;
   pedidoCesta.cantidade = form.elements.cantidade.value;
+  pedidoCesta.numPedidos = arrayCesta.length;
+  numProductos.textContent = arrayCesta.length;
   arrayCesta.push(pedidoCesta)
   localStorage.setItem("cesta",arrayCesta)
   console.log('valores collidos : ', arrayCesta)
@@ -44,6 +48,8 @@ engadir2.addEventListener("click",(e)=>{
   pedidoCesta.producto = form.elements.producto.value;
   pedidoCesta.valor = form.elements.valor.value;
   pedidoCesta.cantidade = form.elements.cantidade.value;
+  pedidoCesta.numPedidos = arrayCesta.length;
+  numProductos.textContent = arrayCesta.length;
   arrayCesta.push(pedidoCesta)
   localStorage.setItem("cesta",arrayCesta)
   console.log('valores collidos : ', arrayCesta)
@@ -56,6 +62,8 @@ engadir3.addEventListener("click",(e)=>{
   pedidoCesta.producto = form.elements.producto.value;
   pedidoCesta.valor = form.elements.valor.value;
   pedidoCesta.cantidade = form.elements.cantidade.value;
+  pedidoCesta.numPedidos = arrayCesta.length;
+  numProductos.textContent = arrayCesta.length;
   arrayCesta.push(pedidoCesta)
   
   localStorage.setItem("cesta",JSON.stringify(arrayCesta))
