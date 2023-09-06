@@ -102,30 +102,33 @@
     </footer>
         <script>
      document.addEventListener("DOMContentLoaded",()=>{
-             const isLogueado = () =>{
+       
+          const isLogueado = () =>{
               console.log('pasa por isLogueado')
               let valor = localStorage.getItem("usuarioLogueado")
-              let salidaBooleano = (valor != undefined) ? true : false;
-              console.log(salidaBooleano)
-              return salidaBooleano;
+              let logueado = (valor != undefined) ? true : false;
+              
+              return logueado;
             }
-           const updateIcons = () =>{
-            console.log('pasa por updateIcons')
-            let isLogued = isLogueado()
-              console.log('isLogued: ',isLogued)
-              if(isLogued === true){
-                updateIconUser()
-              }
-          }
-      
           const updateIconUser = () => {
               let nomfoto = localStorage.getItem("usuarioLogueado");
                let foto = `${nomfoto}.png`;
                usuarios.setAttribute("src",foto)
-               exit.style.display = 'inline';
-               cesta.style.display = 'inline';
+               updateStyle()
           }
-       updateIcons()
+          const updateStyle = () =>{
+            exit.style.display = 'inline';
+            cesta.style.display = 'inline';
+          }
+          
+          const updateIcons = () =>{
+            let isLogued = isLogueado()
+              if(isLogued === true){
+                updateIconUser()
+              }
+          }
+       
+          updateIcons()
      })
      
    </script>

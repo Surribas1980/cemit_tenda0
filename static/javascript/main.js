@@ -12,17 +12,10 @@ cursos.addEventListener('click',()=>{
 
 sobreNos.addEventListener('click',()=>{
   location.replace('/sobrenos')
-  console.log('fasdfasfdadfasdff')
-  setTimeout(() => {
-      console.log("sobreNos Delayed for 2 second.");
-    }, 2000);
 })
 
-home.addEventListener('click', async (event)=>{
+home.addEventListener('click', ()=>{
   location.replace('/');
-  await setTimeout(() => {
-      console.log("home Delayed for 2 second.");
-    }, 3000);
 })
 
 
@@ -55,7 +48,7 @@ enviar.addEventListener("click",async (e) => {
        }
      }) 
 
-exit.addEventListener("click",(e)=>{
+exit.addEventListener("click",()=>{
         localStorage.removeItem("usuarioLogueado")
         let foto = `../imagenes/user.png`;
         usuarios.setAttribute("src",foto)
@@ -74,6 +67,8 @@ rexistrarUsuario.addEventListener("click",async (e)=>{
         let result = await response.json();
         console.log('resposta de rexistrarUsuario: ',result)
 })
+
+
 
 
 

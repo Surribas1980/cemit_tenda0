@@ -86,49 +86,76 @@
         <picture>
           <img class="producto" src="../imagenes/xabon1.png">
         </picture>
-        <h3 name="comentario">Esencial</h3>
-        <h3 name="producto">Oil Soap</h3>
-          <span name="money">5.00 €</span>
-          <div class="engadir-carrito">
-            <img class="carrito" src="../imagenes/carrito.png" alt="carrito compra">
-            Engadir
+          <h3 name="comentario">Esencial</h3>
+        <form id="formDatos" class="formEnvio">
+          <input name="producto" value="Oil Soap">
+          <div class="money">
+            <input name="valor" value="5.00">
+            <span name="money">€</span>
           </div>
+          <input name="cantidade" type="number"  min="1" max="20" placeholder="Introduce cantidade"/>
+          <div class="engadir-carrito" id="engadir">
+            <img class="carrito" src="../imagenes/carrito.png" alt="carrito compra">
+            <span>Engadir</span>
+          </div>
+        </form>
+        
       </div>
         <div>
         <picture>
           <img class="producto" src="../imagenes/xabon2.png">         
         </picture>
           <h3 name="comentario">Esencial</h3>
-          <h3 name="producto">Oganic Soap</h3>
-          <span name="money">5.00 €</span>
-          <div class="engadir-carrito">
-            <img class="carrito" src="../imagenes/carrito.png" alt="carrito compra">
-            Engadir
-          </div>
+          <form id="formDatos1" class="formEnvio">
+            <input name="producto" value="Oganic Soap">
+            <div class="money">
+              <input name="valor" value="5.00">
+              <span name="money">€</span>
+            </div>
+            <input name="cantidade" type="number"  min="1" max="20" placeholder="Introduce cantidade"/>
+            <div class="engadir-carrito" id="engadir1">
+              <img class="carrito" src="../imagenes/carrito.png" alt="carrito compra">
+              <span>Engadir</span>
+            </div>
+         </form>          
       </div>
         <div>
         <picture>
           <img class="producto" src="../imagenes/xabon3.png">
         </picture>
           <h3 name="comentario">Esencial</h3>
-          <h3 name="producto">Glycerin Soap</h3>
-          <span name="money">5.00 €</span>
-          <div class="engadir-carrito">
-            <img class="carrito" src="../imagenes/carrito.png" alt="carrito compra">
-            Engadir
-          </div>
+          <form id="formDatos2" class="formEnvio">
+            <input name="producto" value="Glycerin Soap">
+            <div class="money">
+              <input name="valor" value="5.00">
+              <span name="money">€</span>
+            </div>
+            <input name="cantidade" type="number"  min="1" max="20" placeholder="Introduce cantidade"/>
+            <div class="engadir-carrito" id="engadir2">
+              <img class="carrito" src="../imagenes/carrito.png" alt="carrito compra">
+              <span>Engadir</span>
+            </div>
+         </form> 
+          
       </div>
         <div>
         <picture>
           <img class="producto" src="../imagenes/xabon4.png">
         </picture>
           <h3 name="comentario">Esencial</h3>
-          <h3 name="producto">Olive oil Soap</h3>
-          <span name="money">5.00 €</span>
-          <div class="engadir-carrito">
-            <img class="carrito" src="../imagenes/carrito.png" alt="carrito compra">
-            Engadir
-          </div>
+          <form id="formDatos3" class="formEnvio">
+            <input name="producto" value="Olive oil Soap">
+            <div class="money">
+              <input name="valor" value="5.00">
+              <span name="money">€</span>
+            </div>
+            <input name="cantidade" type="number"  min="1" max="20" placeholder="Introduce cantidade"/>
+            <div class="engadir-carrito" id="engadir3">
+              <img class="carrito" src="../imagenes/carrito.png" alt="carrito compra">
+              <span>Engadir</span>
+            </div>
+         </form> 
+         
       </div>
       </section>
     </main>
@@ -138,30 +165,34 @@
     </footer>
         <script>
      document.addEventListener("DOMContentLoaded",()=>{
-             const isLogueado = () =>{
+       
+          const isLogueado = () =>{
               console.log('pasa por isLogueado')
               let valor = localStorage.getItem("usuarioLogueado")
-              let salidaBooleano = (valor != undefined) ? true : false;
-              console.log(salidaBooleano)
-              return salidaBooleano;
+              let logueado = (valor != undefined) ? true : false;
+              
+              return logueado;
             }
-           const updateIcons = () =>{
-            console.log('pasa por updateIcons')
-            let isLogued = isLogueado()
-              console.log('isLogued: ',isLogued)
-              if(isLogued === true){
-                updateIconUser()
-              }
-          }
-      
           const updateIconUser = () => {
               let nomfoto = localStorage.getItem("usuarioLogueado");
                let foto = `${nomfoto}.png`;
                usuarios.setAttribute("src",foto)
-               exit.style.display = 'inline';
-               cesta.style.display = 'inline';
+               updateStyle()
           }
-       updateIcons()
+          const updateStyle = () =>{
+            exit.style.display = 'inline';
+            cesta.style.display = 'inline';
+          }
+          
+          const updateIcons = () =>{
+            let isLogued = isLogueado()
+              if(isLogued === true){
+                updateIconUser()
+              }
+          }
+       
+          updateIcons()
+      
      })
      
    </script>

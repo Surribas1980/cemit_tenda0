@@ -11,7 +11,41 @@ li[name="nav_user"]{
   list-style:none;
   padding:2vw;
 }
+.formEnvio{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:0.5vw;
+}
+.formEnvio > input[name="producto"]{
+color: black;
+font-size: 12px;
+font-weight: bold;
+text-align: center;
+background-color: unset;
+padding:0;
+}
+.formEnvio > input[name="cantidade"]{
+  width: 13vw;
+  text-align: center;
+  font-size: 1vw;
+  padding: 0.5vw;
+}
+input[name="valor"]{
+  font-size:18px;
+  font-weight:bolder;
+  text-align: center;
+  background-color: unset;
+  width: 4vw;
+  padding: 0;
+  font-family:'Montserrat',sans-serif;
+}
 
+.money{
+  display:flex;
+  background-color: #f6f4f3;
+  margin: 0;
+}
 span[name="novo_user"]{
   font-style:italic;
   font-weight: 700;
@@ -92,9 +126,10 @@ h3[name="producto"]{
   color:#F6F4F3;
   font-size:16px;
   cursor:pointer;
+  display: flex;
+  gap: 0.5vw;
 }
 span[name="money"]{
-  display:block;
   font-size:18px;
   font-weight:bolder;
 }
