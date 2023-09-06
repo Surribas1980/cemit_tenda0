@@ -1,4 +1,4 @@
-import {arrayCesta as aCestaDePedido} from "./helpers.js";
+import {arrayCesta as aCestaDePedido, isCounting as Contando} from "./helpers.js";
 
 let arrayCesta = [];
 
@@ -20,10 +20,13 @@ engadir.addEventListener("click",(e)=>{
   pedidoCesta.valor = form.elements.valor.value;
   pedidoCesta.cantidade = form.elements.cantidade.value;
   pedidoCesta.numPedidos = arrayCesta.length;
-  numProductos.textContent = arrayCesta.length;
+  numProductos.textContent = arrayCesta.length + 1;
+  console.log('numProductos.data: ',numProductos.data)
   arrayCesta.push(pedidoCesta)
+  localStorage.setItem("numProductos",numProductos.textContent)
   localStorage.setItem("cesta",arrayCesta)
-  console.log('valores collidos : ', arrayCesta)
+  console.log('valores collidos : ', arrayCesta);
+  Contando()
 })
 
 engadir1.addEventListener("click",(e)=>{
@@ -35,10 +38,12 @@ let pedidoCesta = {};
   pedidoCesta.valor = form.elements.valor.value;
   pedidoCesta.cantidade = form.elements.cantidade.value;
   pedidoCesta.numPedidos = arrayCesta.length;
-  numProductos.textContent = arrayCesta.length;
+  numProductos.textContent = arrayCesta.length + 1;
   arrayCesta.push(pedidoCesta)
+  localStorage.setItem("numProductos",numProductos.textContent)
   localStorage.setItem("cesta",arrayCesta)
   console.log('valores collidos : ', arrayCesta)
+ Contando()
 })
 engadir2.addEventListener("click",(e)=>{
   e.preventDefault();
@@ -49,10 +54,12 @@ engadir2.addEventListener("click",(e)=>{
   pedidoCesta.valor = form.elements.valor.value;
   pedidoCesta.cantidade = form.elements.cantidade.value;
   pedidoCesta.numPedidos = arrayCesta.length;
-  numProductos.textContent = arrayCesta.length;
+  numProductos.textContent = arrayCesta.length + 1;
   arrayCesta.push(pedidoCesta)
+  localStorage.setItem("numProductos",numProductos.textContent)
   localStorage.setItem("cesta",arrayCesta)
   console.log('valores collidos : ', arrayCesta)
+Contando()
 })
 engadir3.addEventListener("click",(e)=>{
   e.preventDefault();
@@ -63,14 +70,15 @@ engadir3.addEventListener("click",(e)=>{
   pedidoCesta.valor = form.elements.valor.value;
   pedidoCesta.cantidade = form.elements.cantidade.value;
   pedidoCesta.numPedidos = arrayCesta.length;
-  numProductos.textContent = arrayCesta.length;
+  numProductos.textContent = arrayCesta.length + 1;
   arrayCesta.push(pedidoCesta)
-  
+  localStorage.setItem("numProductos",numProductos.textContent)
   localStorage.setItem("cesta",JSON.stringify(arrayCesta))
   let valoresNaStoraged = localStorage.getItem("cesta")
   console.log('..... ',valoresNaStoraged)
   
   console.log('valores collidos : ', arrayCesta)
+  Contando()
 })
 
 

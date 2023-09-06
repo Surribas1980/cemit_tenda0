@@ -50,6 +50,8 @@ enviar.addEventListener("click",async (e) => {
 
 exit.addEventListener("click",()=>{
         localStorage.removeItem("usuarioLogueado")
+        localStorage.removeItem("numProductos")
+        numProductos.style.display = "none";
         let foto = `../imagenes/user.png`;
         usuarios.setAttribute("src",foto)
         exit.style.display = 'none';

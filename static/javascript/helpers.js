@@ -9,7 +9,10 @@ const arrayCesta = (valores) => {
   let valoresNaStoraged = localStorage.getItem("cesta")
   console.log('..... ',valoresNaStoraged)
 }
-
+const isCounting = () => {
+  numProductos.style.display = "block";
+}
 export {
-  arrayCesta
+  arrayCesta,
+  isCounting
 }

@@ -184,12 +184,34 @@
             cesta.style.display = 'inline';
           }
           
+          
+          const isShopping = () =>{
+              console.log('pasa por numProductos')
+              let valor = localStorage.getItem("numProductos")
+              let comprando = (valor != undefined) ? true : false;
+              
+              return comprando;
+            }
+          const showShopping = () => {
+              let cantProductos = localStorage.getItem("numProductos");
+              numProductos.style.display = "block";
+              numProductos.textContent = cantProductos;
+          }
+          const updateShop = () => {
+            let isLogued = isLogueado()
+            let shopping = isShopping()
+              if(isLogued === true && shopping === true){
+                showShopping()
+              }
+          }
           const updateIcons = () =>{
             let isLogued = isLogueado()
               if(isLogued === true){
                 updateIconUser()
               }
           }
+       
+          updateShop()
        
           updateIcons()
       
