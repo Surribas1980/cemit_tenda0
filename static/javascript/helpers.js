@@ -23,6 +23,15 @@ const pintarLista = () => {
     listaConvertida = JSON.parse(listaCompra)
     console.log('A lista: ',listaConvertida)
     let resultado = 0;
+    const numFillos = lista.childNodes.length;
+    /*if(numFillos != 0){
+      console.log("numFillos: ",numFillos)
+      for(let contador = 0 ; contador <= lista.childNodes.length;contador ++ ){
+        lista.childNodes[contador].remove()
+      }
+    }*/
+    
+    
     const pintar = listaConvertida.map((item)=>{
           let elementoLista = document.createElement('li');
           
