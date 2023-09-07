@@ -1,4 +1,5 @@
-const arrayCesta = (valores) => {
+let arrayCesta = [];
+/*const arrayCesta = (valores) => {
   console.log('valores en arrayCesta: ',valores)
   
   
@@ -8,7 +9,7 @@ const arrayCesta = (valores) => {
   localStorage.setItem("cesta",aCesta)
   let valoresNaStoraged = localStorage.getItem("cesta")
   console.log('..... ',valoresNaStoraged)
-}
+}*/
 const isCounting = () => {
   numProductos.style.display = "block";
 }
@@ -20,7 +21,7 @@ const pintarLista = () => {
   
   if(typeof listaCompra === "string"){
     listaConvertida = JSON.parse(listaCompra)
-    console.log(listaConvertida,typeof listaConvertida)
+    console.log('A lista: ',listaConvertida)
     let resultado = 0;
     const pintar = listaConvertida.map((item)=>{
           let elementoLista = document.createElement('li');
@@ -42,8 +43,27 @@ const pintarLista = () => {
     lista.after(resultadoPintado)
   }
 }
+const pedidosFormulario = (form) => {
+  let pedidoCesta = {};
+  
+  pedidoCesta.producto = form.elements.producto.value;
+  pedidoCesta.valor = form.elements.valor.value;
+  pedidoCesta.cantidade = form.elements.cantidade.value;
+  pedidoCesta.numPedidos = arrayCesta.length;
+  numProductos.textContent = arrayCesta.length + 1;
+  arrayCesta.push(pedidoCesta)
+  
+  localStorage.setItem("numProductos",numProductos.textContent)
+  localStorage.setItem("cesta",JSON.stringify(arrayCesta))
+  let valoresNaStoraged = localStorage.getItem("cesta")
+  console.log('..... ',valoresNaStoraged)
+  
+  console.log('valores collidos : ', arrayCesta)
+  isCounting()
+}
 export {
   arrayCesta,
   isCounting,
-  pintarLista
+  pintarLista,
+  pedidosFormulario
 }

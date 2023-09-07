@@ -431,6 +431,21 @@ hr{
   }
 }
 @media (max-width: 600px){
+  .formEnvio{
+    width: 90%;
+  }
+  #numProductos{
+    right:unset;
+    left:22px;
+  }
+  input[name="valor"]{
+    width: 12vw;
+  }
+  .formEnvio > input[name="cantidade"]{
+    text-align: center;
+    font-size: 3vw;
+    width: 100%;
+  }
   form[name="login"] input{
     width: min-content;
     padding:2vw;

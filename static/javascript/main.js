@@ -54,6 +54,7 @@ exit.addEventListener("click",()=>{
         localStorage.removeItem("usuarioLogueado")
         localStorage.removeItem("numProductos")
         localStorage.removeItem("cesta")
+        localStorage.clear();
         numProductos.style.display = "none";
         let foto = `../imagenes/user.png`;
         usuarios.setAttribute("src",foto)
@@ -62,14 +63,18 @@ exit.addEventListener("click",()=>{
       })
 
 cesta.addEventListener("click",()=>{
-  console.log("hola cesta")
-  let oPopUpCesta = document.getElementById('pop');
-  if(oPopUpCesta.style.display == "none"){
-    oPopUpCesta.style.display = "block";
-    pintarLista();
-  }else{
-    oPopUpCesta.style.display = "none";
+  let aCesta = localStorage.getItem("cesta");
+  console.log("hola cesta: ",aCesta)
+  if(aCesta != undefined && aCesta != null){
+    let oPopUpCesta = document.getElementById('pop');
+    if(oPopUpCesta.style.display == "none"){
+      oPopUpCesta.style.display = "block";
+      pintarLista();
+    }else{
+      oPopUpCesta.style.display = "none";
+    }
   }
+  
 })
 
 rexistrarUsuario.addEventListener("click",async (e)=>{
