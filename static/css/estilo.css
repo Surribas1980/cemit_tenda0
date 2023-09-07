@@ -52,7 +52,9 @@ input[name="valor"]{
   z-index: 2;
   top:35px;
   right:0px;
-  background-color:orange;
+  background-color:#f6f4f3;
+  border:1px solid #e2d8d8;
+  width: max-content;
 }
 span[name="novo_user"]{
   font-style:italic;

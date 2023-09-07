@@ -1,3 +1,5 @@
+import {pintarLista} from "./helpers.js";
+
 contacto.addEventListener('click',()=>{
   location.replace('/contacto')
 })
@@ -64,6 +66,7 @@ cesta.addEventListener("click",()=>{
   let oPopUpCesta = document.getElementById('pop');
   if(oPopUpCesta.style.display == "none"){
     oPopUpCesta.style.display = "block";
+    pintarLista();
   }else{
     oPopUpCesta.style.display = "none";
   }
