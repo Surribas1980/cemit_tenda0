@@ -1,4 +1,4 @@
-import {arrayCesta as aCestaDePedido, isCounting as Contando} from "./helpers.js";
+import {isCounting as Contando} from "./helpers.js";
 
 let arrayCesta = [];
 
@@ -72,6 +72,7 @@ engadir3.addEventListener("click",(e)=>{
   pedidoCesta.numPedidos = arrayCesta.length;
   numProductos.textContent = arrayCesta.length + 1;
   arrayCesta.push(pedidoCesta)
+  
   localStorage.setItem("numProductos",numProductos.textContent)
   localStorage.setItem("cesta",JSON.stringify(arrayCesta))
   let valoresNaStoraged = localStorage.getItem("cesta")
