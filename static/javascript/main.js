@@ -59,6 +59,16 @@ exit.addEventListener("click",()=>{
         cesta.style.display = 'none';
       })
 
+cesta.addEventListener("click",()=>{
+  console.log("hola cesta")
+  let oPopUpCesta = document.getElementById('pop');
+  if(oPopUpCesta.style.display == "none"){
+    oPopUpCesta.style.display = "block";
+  }else{
+    oPopUpCesta.style.display = "none";
+  }
+})
+
 rexistrarUsuario.addEventListener("click",async (e)=>{
   e.preventDefault();
   console.log('hola estou no rexistrarUsuario click')
